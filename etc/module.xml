@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Serverless Shipping
+ *
+ * Calculate shipping rates using a serverless function.
+ *
+ * @package ImDigital\ServerlessShipping
+ * @author Igor Ludgero Miura <igor@imdigital.com>
+ * @copyright Copyright (c) 2023 Imagination Media (https://www.imdigital.com/)
+ * @license Private
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="ImDigital_ServerlessShipping" >
+        <sequence>
+            <module name="ImaginationMedia_Serverless"/>
+        </sequence>
+    </module>
+</config>

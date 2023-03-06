@@ -1,0 +1,36 @@
+{
+    "name": "imdigital/magento-serverless-shipping",
+    "description": "Use serverless functions to calculate shipping rates in Magento 2",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "authors": [
+        {
+        "name": "Igor Ludgero Miura",
+        "email": "igor@imdigital.com",
+        "homepage": "https://www.imdigital.com/",
+        "role": "Senior Software Engineer"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "version": "1.0.1",
+    "require": {
+        "php": ">=8.1",
+        "imdigital/magento-serverless": "^1.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "ImDigital\\ServerlessShipping\\": ""
+        }
+    },
+    "archive": {
+        "exclude": ["screenshots", ".gitignore"]
+    }
+}

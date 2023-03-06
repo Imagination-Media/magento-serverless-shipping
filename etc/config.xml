@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Serverless Shipping
+ *
+ * Calculate shipping rates using a serverless function.
+ *
+ * @package ImDigital\ServerlessShipping
+ * @author Igor Ludgero Miura <igor@imdigital.com>
+ * @copyright Copyright (c) 2023 Imagination Media (https://www.imdigital.com/)
+ * @license Private
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <serverless>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>ImDigital\ServerlessShipping\Model\Carrier</model>
+                <title>Shipping costs</title>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </serverless>
+        </carriers>
+    </default>
+</config>
