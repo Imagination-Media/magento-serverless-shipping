@@ -53,12 +53,42 @@ Then, on this delivery method, we can define a title for this delivery method an
 </p>
 
 <br/>
-
-The ***region_id*** is the region where the cloud function is hosted. The ***serviceaccount_key*** field is a [service account that we must create](https://cloud.google.com/iam/docs/service-account-overview), and then [generate a JSON service account key](https://cloud.google.com/iam/docs/keys-create-delete) with access to execute the functions.
-
-These are the permissions you must add to your service account in order to be able to execute cloud functions:
-
-<br/>
 <br/>
 
 # Returning the shipping rates
+
+The serverless function that returns the shipping rates must return a list of rates, and each of these rates must have the following fields:
+
+- **code**  - an unique identifier for the shipping rate.
+- **label** - the title that's going to be displayed to the customer on the shipping calculation.
+- **cost**  - the shipping cost for this rate.
+- **price** - the price for using the shipping rate. It's the value the customer is going to pay when choosing the shipping rate.
+
+Example (in NodeJS):
+
+```javascript
+/**
+ * Responds to any HTTP request.
+ *
+ * @param {!express:Request} req HTTP request context.
+ * @param {!express:Response} res HTTP response context.
+ */
+exports.calculateShippingRates = (req, res) => {
+  const shippingRates = [
+    {
+      'code' : 'rate1',
+      'label' : 'Rate 1',
+      'cost' : 10.50,
+      'price' : 17
+    },
+    {
+      'code' : 'rate2',
+      'label' : 'Rate 2',
+      'cost' : 18,
+      'price' : 25
+    }
+  ];
+
+  res.status(200).send(JSON.stringify(shippingRates));
+};
+```
